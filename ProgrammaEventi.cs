@@ -2,15 +2,41 @@
 {
     private string Title { get; set; }
 
-    List<Event> EventList = new List<Event>();
+    List<SingleEvent> EventList = new List<SingleEvent>();
 
-    public ProgrammaEventi(string titolo)
+    public ProgrammaEventi(string title)
     {
-        Title = titolo;
-        EventList = new List<Event>();
+        Title = title;
+        EventList = new List<SingleEvent>();
     }
-    public void AddEvent(Event event)
+    public void AddEvent(SingleEvent singleEvent)
     {
-        EventList.Add(event);
+        EventList.Add(singleEvent);
+    }
+    public static void PrintList(List<SingleEvent> EventList)
+    {
+        Console.WriteLine("I tuoi eventi della serata:");
+        foreach (SingleEvent singleEvent in EventList)
+        {
+            Console.WriteLine(singleEvent.ToString());
+        }
+    }
+    public int EventsCount()
+    {
+        return EventList.Count;
+    }
+    public void EmptyList()
+    {
+        EventList.Clear();
+    }
+    public string ProgramRecap()
+    {
+        Console.WriteLine("Info programma evento");
+        string result = "";
+        foreach (SingleEvent singleEvent in EventList)
+        {
+            result += $"{singleEvent.ToString()}\n";
+        }
+        return result;
     }
 }

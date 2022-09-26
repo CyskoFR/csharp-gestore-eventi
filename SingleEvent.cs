@@ -1,4 +1,4 @@
-﻿public class Event
+﻿public class SingleEvent
 {
     public string Title
     {
@@ -46,7 +46,7 @@
     public int ReservedSeats { get; private set; }
 
     // Constructor
-    public Event(string title, DateTime eventDateTime, int maxCapacity)
+    public SingleEvent(string title, DateTime eventDateTime, int maxCapacity)
     {
         Title = title;
         EventDateTime = eventDateTime;

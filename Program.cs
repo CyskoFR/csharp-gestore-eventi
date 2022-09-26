@@ -15,13 +15,13 @@ int maxCapacity = Convert.ToInt32(Console.ReadLine());
 
 try
 {
-    Event event = new Event(title, eventDateTime, maxCapacity);
+    SingleEvent singleEvent = new SingleEvent(title, eventDateTime, maxCapacity);
 
     Console.WriteLine("Quanti posti desideri prenotare?");
     int seatsToReserve = Convert.ToInt32(Console.ReadLine());
 
     Console.WriteLine("Numero di posti prenotati: " + seatsToReserve);
-    Console.WriteLine("Numero di posti disponibili: " + event.AvailableSeats());
+    Console.WriteLine("Numero di posti disponibili: " + singleEvent.AvailableSeats());
 
     bool goAhead = true;
 
@@ -34,20 +34,19 @@ try
             case "si":
                 Console.WriteLine("Indica il numero di posti da disdire:");
                 int seatsToCancel = Convert.ToInt32(Console.ReadLine());
-                event.CancelSeat(seatsToCancel);
-                Console.WriteLine("Numero di posti prenotati: " + event.ReservedSeats);
-                Console.WriteLine("Numero di posti liberi: " + event.AvailableSeats());
+                singleEvent.CancelSeat(seatsToCancel);
+                Console.WriteLine("Numero di posti prenotati: " + singleEvent.ReservedSeats);
+                Console.WriteLine("Numero di posti liberi: " + singleEvent.AvailableSeats());
                 break;
 
             case "no":
                 Console.WriteLine("Ok va bene!");
-                Console.WriteLine("Numero di posti prenotati: " + event.ReservedSeats);
-                Console.WriteLine("Numero di posti disponibili: " + event.AvailableSeats());
+                Console.WriteLine("Numero di posti prenotati: " + singleEvent.ReservedSeats);
+                Console.WriteLine("Numero di posti disponibili: " + singleEvent.AvailableSeats());
                 goAhead = false;
                 break;
         }
     }
-
 }
 catch (EmptyTitle e)
 {
