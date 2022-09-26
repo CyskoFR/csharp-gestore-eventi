@@ -45,6 +45,7 @@
     }
     public int ReservedSeats { get; private set; }
 
+    // Constructor
     public Event(string title, DateTime eventDateTime, int maxCapacity)
     {
         Title = title;
