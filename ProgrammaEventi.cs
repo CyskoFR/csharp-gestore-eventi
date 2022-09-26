@@ -21,6 +21,11 @@
             Console.WriteLine(singleEvent.ToString());
         }
     }
+    //public List<SingleEvent> SearchForDate(DateTime date)
+    //{
+    //    List<SingleEvent> searchResults = EventList.FindAll(date);
+    //    return searchResults;
+    //}
     public int EventsCount()
     {
         return EventList.Count;
